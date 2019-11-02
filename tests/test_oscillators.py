@@ -1,6 +1,6 @@
 import sys
 sys.path.insert(1, '.')
-import rules.field as fields
+import game.field as fields
 
 def test_blinker():
 	field = fields.closedField(size=(4, 4))

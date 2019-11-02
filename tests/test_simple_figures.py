@@ -1,6 +1,6 @@
 import sys
 sys.path.insert(1, '.')
-import rules.field as fields
+import game.field as fields
 
 def test_dots():
 	field = fields.closedField(size=(5, 5))
