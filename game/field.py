@@ -59,9 +59,11 @@ class closedField:
 
 		return self.field
 
-	def GetPrevStep(self):
+	def GetPrevField(self):
 		return self.prev_field
-
 
 	def GetField(self):
 		return self.field
+
+	def GetShape(self):
+		return self.field.shape
