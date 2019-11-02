@@ -40,11 +40,14 @@ def PlotGrid(field_obj):
 def SaveAnimation(field_obj, frames=10, path='animation.gif'):
 	shape = field_obj.GetShape()
 
-	def animate(_):
-		field_obj.NextStep()
-		return PlotGridRaw(field_obj.GetPrevField(), shape)
+	def animate(i):
+		if i == 0:
+			PlotGrid(field_obj)
+		else:
+			field_obj.NextStep()
+			PlotGrid(field_obj)
 
-	ani = animation.FuncAnimation(plt.figure(figsize=shape), animate, frames=frames)
-	ani.save(path, writer='imagemagick', fps=4);
+	ani = animation.FuncAnimation(plt.figure(figsize=shape), animate, frames=frames, interval=400)
+	ani.save(path, writer='imagemagick');
 
 	return ani
